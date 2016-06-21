@@ -1,6 +1,6 @@
 (function(angular) {
 
-    angular.module('amc-power').controller('main.controller', ['$scope', MainController]);
+    angular.module('amc-power').controller('MainController', ['$scope', MainController]);
 
     function MainController($scope) {
 
