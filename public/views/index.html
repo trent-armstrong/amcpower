@@ -1,6 +1,4 @@
-<!-- public/index.html -->
-<!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <base href="/">
@@ -13,9 +11,18 @@
 </head>
 <body ng-app="amc-power">
     <h1>AMC Power</h1>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <div ng-view></div>
 
     <!-- JS -->
-    <script src="libs/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+
     <script src="dist/amc-power.min.js"></script>
 
     <script src="//localhost:35729/livereload.js"></script>
