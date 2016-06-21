@@ -6,22 +6,48 @@
     <title>AMC Power</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="dist/amc-power.min.css">
 
 </head>
 <body ng-app="amc-power">
-    <h1>AMC Power</h1>
-    <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
 
-    <div ng-view></div>
+<div class="container">
+    <!-- Navigation -->
+    <div class="row section navigation">
+        <div class="col-xs-12">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="row section main">
+
+        <div ng-view></div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="row section footer">
+        <div class="col-xs-12">
+
+            <h3>FOOTER</h3>
+
+        </div>
+    </div>
+
+
+</div>
 
     <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 
     <script src="dist/amc-power.min.js"></script>
 

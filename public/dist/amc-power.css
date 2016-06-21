@@ -1,4 +1,14 @@
-body {
-  background-color: white; }
+.footer {
+  background-color: darkgray; }
+
+.main {
+  background-color: lightgreen; }
+  .main .left {
+    background-color: yellow; }
+  .main .right {
+    background-color: #666; }
+
+.navigation {
+  background-color: lightgray; }
 
 /*# sourceMappingURL=amc-power.css.map */
