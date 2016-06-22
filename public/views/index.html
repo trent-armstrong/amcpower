@@ -10,9 +10,10 @@
     <link rel="stylesheet" type="text/css" href="dist/amc-power.min.css">
 
 </head>
-<body ng-app="amc-power">
+<body ng-app="amc-power" ng-controller="MainController">
 
 <div class="container">
+
     <!-- Navigation -->
     <div class="row section navigation">
         <div class="col-xs-12">
@@ -27,6 +28,7 @@
     <!-- Main Content -->
     <div class="row section main">
 
+        <!-- Dynamic Angular Content -->
         <div ng-view></div>
 
     </div>

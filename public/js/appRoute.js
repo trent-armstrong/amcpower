@@ -7,7 +7,7 @@
             // Home
             .when('/home', {
                 templateUrl: 'views/home.html',
-                controller: 'MainController'
+                controller: 'HomeController'
             })
 
             // About
@@ -25,7 +25,7 @@
             // Otherwise, use the home page.
             .otherwise( {
                 templateUrl: 'views/home.html',
-                controller: 'MainController'
+                controller: 'HomeController'
             });
 
         $locationProvider.html5Mode(true);
