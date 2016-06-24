@@ -37,6 +37,8 @@ app.use(express.static(__dirname + '/public'));
 /**
  * Routing Configuration
  */
+require('./app/middleware/logger')(app);
+
 require('./app/routes/main')(app);
 require('./app/routes/product-line')(app);
 require('./app/routes/product')(app);
