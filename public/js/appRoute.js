@@ -22,6 +22,12 @@
                 controller: 'ContactController'
             })
 
+            // Admin
+            .when('/admin', {
+                templateUrl: 'views/admin.html',
+                controller: 'AdminController'
+            })
+
             // Otherwise, use the home page.
             .otherwise( {
                 templateUrl: 'views/home.html',

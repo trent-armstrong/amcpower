@@ -40,8 +40,6 @@ app.use(express.static(__dirname + '/public'));
 require('./app/middleware/logger')(app);
 
 require('./app/routes/main')(app);
-require('./app/routes/product-line')(app);
-require('./app/routes/product')(app);
 
 /**
  * App Startup
