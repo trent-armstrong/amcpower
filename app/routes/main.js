@@ -42,6 +42,21 @@ module.exports = function(app) {
 
     });
 
+    app.delete('/api/v1/product/:product_id', function(req, res) {
+
+        Product.remove({ _id: req.params.product_id },
+
+            function(err) {
+
+                if (err) {
+                    res.send(err);
+
+                }
+                res.json({ message: 'Successfully deleted' });
+            }
+        );
+    });
+
     //var apiVersion = '/api/v1'
     //var products = require('./product.js');
     //var productLines = require('./product-line.js');

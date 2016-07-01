@@ -48,6 +48,14 @@
          */
         func.deleteProduct = function (id) {
 
+            $api.deleteProduct(id).then(
+                function () {
+                    func.refreshProducts();
+                },
+                function (err) {
+                    console.err('Error deleting product with id: ' + id);
+                }
+            )
         };
 
         /**
