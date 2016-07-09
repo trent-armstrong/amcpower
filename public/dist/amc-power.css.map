@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,OAAQ;EACN,gBAAgB,EAAE,QAAQ;;ACD5B,KAAM;EACJ,gBAAgB,EAAE,UAAU;EAE5B,WAAQ;IACN,gBAAgB,EAAE,MAAM;EAE1B,YAAS;IACP,gBAAgB,EAAE,IAAI;;ACP1B,WAAY;EACV,gBAAgB,EAAE,SAAS",
+"mappings": "AAAA,OAAQ;EACN,gBAAgB,EAAE,QAAQ;;ACC1B,WAAQ;EACN,gBAAgB,EAAE,MAAM;AAE1B,YAAS;EACP,gBAAgB,EAAE,IAAI;;ACN1B,WAAY;EACV,gBAAgB,EAAE,SAAS",
 "sources": ["../sass/modules/footer.scss","../sass/modules/main-content.scss","../sass/modules/navigation.scss"],
 "names": [],
 "file": "amc-power.css"

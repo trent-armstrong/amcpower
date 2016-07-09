@@ -6,12 +6,22 @@
 
         // Data
         $scope.data = {};
-        var data = $scope.data;
+        $scope.vm = {};
+        var data = $scope.data,
+            vm = $scope.vm;
 
         data.name = "";
         data.description = "";
-        data.products = [];
-        data.currentProduct = {};
+        data.outputs = {
+            min: 0,
+            max: 0
+        };
+        data.outputVoltage = "";
+        data.outputPower = "";
+        data.operatingTemp = "";
+
+        vm.products = [];
+        vm.currentProduct = {};
 
         // Functions
         $scope.func = {};
@@ -48,6 +58,14 @@
          */
         func.deleteProduct = function (id) {
 
+            $api.deleteProduct(id).then(
+                function () {
+                    func.refreshProducts();
+                },
+                function (err) {
+                    console.error('Error deleting product with id: ' + id);
+                }
+            )
         };
 
         /**
@@ -57,7 +75,7 @@
 
             $api.getProducts().then(
                 function (products) {
-                    data.products = products.data;
+                    vm.products = products.data;
                 },
                 function (err) {
                     console.log(err);

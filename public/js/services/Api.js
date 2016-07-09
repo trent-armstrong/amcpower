@@ -5,7 +5,8 @@ function ApiService($http) {
 
     var service = {
         getProducts: getProducts,
-        createProduct: createProduct
+        createProduct: createProduct,
+        deleteProduct: deleteProduct
     };
 
     return service;
@@ -22,12 +23,26 @@ function ApiService($http) {
 
     /**
      *
+     * @param data
+     * @returns {*}
      */
     function createProduct (data) {
         return $http({
             method: 'POST',
             url: '/api/v1/product',
             data: data
+        });
+    }
+
+    /**
+     *
+     * @param id
+     * @returns {*}
+     */
+    function deleteProduct (id) {
+        return $http({
+            method: 'DELETE',
+            url: '/api/v1/product/' + id
         });
     }
 }

@@ -2,6 +2,7 @@
 <div ng-controller="ProductController" class="col-xs-12">
     <h3>Products</h3>
     <form role="form">
+        <input type="hidden" ng-model="data.currentProduct.id" />
         <div class="form-group">
             <label for="productName">Product Name</label>
             <input id="productName" type="text" class="form-control" ng-model="data.name"/>
@@ -10,24 +11,38 @@
             <label for="productDescription">Description</label>
             <textarea id="productDescription" type="text" class="form-control" ng-model="data.description"/>
         </div>
-        <button class="btn" ng-click="func.createProduct()">CREATE</button>
-        <button class="btn">UPDATE</button>
+        <div class="form-group">
+            <label for="productOutputMin">Min</label>
+            <input id="productOutputMin" type="number" class="form-control" ng-model="data.outputs.min"/>
+            <label for="productOutputMax">Max</label>
+            <input id="productOutputMax" type="number" class="form-control" ng-model="data.outputs.max"/>
+        </div>
+        <button class="btn" ng-click="func.createProduct()" ng-disable="!data.currentProduct.id">CREATE</button>
+        <button class="btn" ng-disable="!data.currentProduct.id">UPDATE</button>
     </form>
     <table class="table table-hover">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Description</th>
+                <th># of Outputs</th>
+                <th>Output Voltage</th>
+                <th>Output Power</th>
+                <th>Operating Temp</th>
                 <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="product in data.products track by $index">
+            <tr ng-repeat="product in vm.products track by $index">
                 <td><span ng-bind="product.name"/></td>
                 <td><span ng-bind="product.description"/></td>
+                <td><span ng-bind="product.outputs.min"/>-<span ng-bind="product.outputs.max"/></td>
+                <td><span ng-bind="product.outputVoltage"/></td>
+                <td><span ng-bind="product.outputPower"/></td>
+                <td><span ng-bind="product.operatingTemp"/></td>
                 <td><button type="button" class="btn" ng-click="func.updateProduct()">MODIFY</button></td>
-                <td><button type="button" class="btn" ng-click="func.deleteProduct()">DELETE</button></td>
+                <td><button type="button" class="btn" ng-click="func.deleteProduct(product._id)">DELETE</button></td>
             </tr>
         </tbody>
     </table>

@@ -30,6 +30,10 @@ module.exports = function(app) {
         var product = new Product();
         product.name = req.body.name;
         product.description = req.body.description;
+        product.outputs = {
+            min: req.body.outputs.min,
+            max: req.body.outputs.max
+        }
 
         product.save(function(err) {
 
@@ -40,6 +44,20 @@ module.exports = function(app) {
             res.json({ message: 'Product Created!' });
         });
 
+    });
+
+    app.delete('/api/v1/product/:product_id', function(req, res) {
+
+        Product.remove({ _id: req.params.product_id },
+
+            function(err) {
+
+                if (err) {
+                    res.send(err);
+                }
+                res.json({ message: 'Successfully deleted' });
+            }
+        );
     });
 
     //var apiVersion = '/api/v1'
